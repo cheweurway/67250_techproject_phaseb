@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Eu-Rway" content="Eu-Rway">
+    <meta name="keywords" content="Museum, Carnegie Mellon University, Information Systems">
+    <meta name="description" content="MonoMuse website redesign project">
+    <link rel="stylesheet" href="../static/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <script src="../static/script.js" defer></script>
+    <script
+        src="https://code.jquery.com/jquery-4.0.0.min.js"
+        integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao="
+        crossorigin="anonymous">
+    </script>
+    <title>MonoMuse</title>
+
+</head>
+
+<body>
+    <div class="container"> 
+        <header class="header">
+            <img id="logo" src="../static/monomuselogo.png" alt="MonoMuse Museum Logo"> 
+        </header>
+        <nav class="nav_bar">
+            <a href="../index.html">Home</a>
+            <a href="explore.html">Explore</a>
+            <a href="exhibitions.html">Exhibitions</a>
+            <a href="tickets.html">Buy Tickets</a>
+            <a class = "checkout" href="checkout.html">Checkout</a>
+        </nav>
+        <main class="main calendar">
+            <table>
+                <caption><h3>April 2026</h3></caption>
+                <thead>
+                    <tr>
+                        <th>Sun</th>
+                        <th>Mon</th>
+                        <th>Tue</th>
+                        <th>Wed</th>
+                        <th>Thu</th>
+                        <th>Fri</th>
+                        <th>Sat</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>4</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>6</td>
+                        <td>7</td>
+                        <td>8</td>
+                        <td>9</td>
+                        <td>10</td>
+                        <td>11</td>
+                    </tr>
+                    <tr>
+                        <td>12</td>
+                        <td>13</td>
+                        <td>14</td>
+                        <td>15</td>
+                        <td>16</td>
+                        <td>17</td>
+                        <td>18</td>
+                    </tr>
+                    <tr>
+                        <td>19</td>
+                        <td>20</td>
+                        <td>21</td>
+                        <td>22</td>
+                        <td>23</td>
+                        <td>24</td>
+                        <td>25</td>
+                    </tr>
+                    <tr>
+                        <td>26</td>
+                        <td>27</td>
+                        <td>28</td>
+                        <td>29</td>
+                        <td>30</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <button id="readMore">Buy Ticket</button>
+            <button id="readLess">Buy Ticket</button>
+            <show id ="buyTicket">
+                <form >
+                    <label>Name: (required)</label>
+                    <br>
+                    <input type = "text">
+                </form>
+                <br>
+                <form>
+                    <label>Email: (required)</label>
+                    <br>
+                    <input type = "email">
+                </form>
+                <br>
+                <form>
+                    <label>Ticket Quantity: (required)</label>
+                    <br>
+                    <input type = "number">
+                </form>
+
+                <br>
+                <form>
+                    <label>Date: (Required)</label>
+                    <br>
+                    <input type = "date">
+                </form>
+                <br>
+                <form>
+                    <input type = "submit" onclick="submitPurchase()">
+
+                </form>
+                
+            </show>
+            
+
+        </main>
+        <table class = "main_img" >
+                <tr>
+                    <th>Ticket Type</th>
+                    <th>Description</th>
+                    <th>Price</th>
+                </tr>
+                <tr>
+                    <td>Adult</td>
+                    <td>General Admission</td>
+                    <td>$18</td>
+                </tr>
+                <tr>
+                    <td>Student</td>
+                    <td>With valid University ID (CMU/Pitt/etc.)</td>
+                    <td>$12</td>
+                </tr>
+                <tr>
+                    <td>Senior</td>
+                    <td>Ages 65+</td>
+                    <td>$14</td>
+                </tr>
+                <tr>
+                    <td>Children</td>
+                    <td>Ages 5-12 (Under 5 are Free)</td>
+                    <td>$10</td>
+                </tr>
+                <tr>
+                    <td>Annual Membership</td>
+                    <td>Unlimited Entry</td>
+                    <td>$60</td>
+                </tr>
+            </table>
+
+        <footer class="footer">
+            © MonoMuse. All rights reserved.
+            <p id="copyYear"></p>
+        </footer>
+    </div>
+</body>
+</html>

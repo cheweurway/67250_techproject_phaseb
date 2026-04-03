@@ -1,0 +1,135 @@
+*{
+
+    padding: 5px;
+    margin: 5px;
+    background: #0b0b0c;
+    color:  #f5f5f7;
+
+    font-family: Roboto, Helvetica, Arial, sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 100;
+    line-height: 1.5;
+    /* border: 1px solid white; */
+}
+
+#checkoutButton {
+  width: 18%;
+  display: block;
+}
+
+.image {
+  width: 49vw;
+}
+
+#logo {
+  height:50px;
+  display: block;
+}
+.checkout {
+    display: inline-block;
+    background-color: #2E4F3F; 
+    color: white;              
+    font-weight: 600;         
+}
+
+
+
+nav a {
+  text-decoration: none;
+  color: #f5f5f7;
+  font-weight: 400;
+  padding: 8px 10px;
+  border: 1px solid transparent;
+  border-radius: 12px;
+}
+
+nav a:hover {
+  border-color: #4d5c3b;
+  }
+
+#longIntro { display: none; }
+#readLess { display: none; }
+#buyTicket { display: none; }
+
+
+.active {
+  color:#92ad70;    
+  border-bottom: 2px solid #92ad70;
+  padding-bottom: 2px;
+}
+
+footer {
+  border-top: 1px solid rgba(245,245,247,.12);
+  padding: 18px 16px;
+  text-align: center;
+  color: rgba(245,245,247,.72);
+  font-weight: bold;
+  }
+
+
+th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  width: fit-content;
+  border-bottom: 1px solid #ddd;
+}
+/* 
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+  border-bottom: 1px solid #ddd;
+} */
+
+
+form * {
+  margin: auto;
+  text-align: center;
+}
+
+
+.container {
+  display: grid; /* Turns this div into a CSS Grid layout */
+  min-width: 100vh;
+  grid-template-rows: 100px 75px auto 50px;
+  grid-template-columns: 600px auto;
+  grid-template-areas:   /* Defines the layout structure */
+    'header header'
+    'nav_bar nav_bar'
+    'main main-img'
+    'footer footer';
+}
+
+/* Places each element into the correct area of the grid */
+.header {
+   grid-area: header; 
+}
+
+.nav_bar {
+  grid-area: nav_bar;
+  display: flex; /* Uses Flexbox for internal layout */
+  justify-content: center;   /* center aligns the content */
+}
+.main {
+  grid-area: main; 
+  display: flexbox;
+
+}
+
+.calendar {
+  grid-area: main; 
+  display: flex;
+  align-items: center;     /* Centers the table vertically */
+  flex-direction: column;  /* Ensures things stack if you add more text */
+  overflow: auto;
+}
+
+
+.main_img {
+   grid-area: main-img; 
+   min-width: 50vw;
+}
+
+.footer {
+   grid-area: footer;
+}
+
+

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Eu-Rway" content="Eu-Rway">
+    <meta name="keywords" content="Museum, Carnegie Mellon University, Information Systems">
+    <meta name="description" content="MonoMuse website redesign project">
+    <link rel="stylesheet" href="../static/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <script src="../static/script.js" defer></script>
+    <script
+        src="https://code.jquery.com/jquery-4.0.0.min.js"
+        integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao="
+        crossorigin="anonymous">
+    </script>
+    <title>MonoMuse</title>
+</head>
+<body>
+    <div class="container"> 
+        <header class="header">
+            <img id="logo" src="../static/monomuselogo.png" alt="MonoMuse Museum Logo"> 
+        </header>
+        <nav class="nav_bar">
+            <a href="../index.html">Home</a>
+            <a href="explore.html">Explore</a>
+            <a href="exhibitions.html">Exhibitions</a>
+            <a href="tickets.html">Buy Tickets</a>
+            <a class = "checkout" href="checkout.html">Checkout</a>
+        </nav>
+        <main class="main">
+            <h1>Buy Tickets Here</h1>
+            
+            <table>
+                <tr>
+                    <th>Ticket Type</th>
+                    <th>Description</th>
+                    <th>Price</th>
+                </tr>
+                <tr>
+                    <td>Adult</td>
+                    <td>General Admission</td>
+                    <td>$18</td>
+                </tr>
+                <tr>
+                    <td>Student</td>
+                    <td>With valid University ID (CMU/Pitt/etc.)</td>
+                    <td>$12</td>
+                </tr>
+                <tr>
+                    <td>Senior</td>
+                    <td>Ages 65+</td>
+                    <td>$14</td>
+                </tr>
+                <tr>
+                    <td>Children</td>
+                    <td>Ages 5-12 (Under 5 are Free)</td>
+                    <td>$10</td>
+                </tr>
+                <tr>
+                    <td>Annual Membership</td>
+                    <td>Unlimited Entry</td>
+                    <td>$60</td>
+                </tr>
+            </table>
+        </main>
+        <figure class="main_img">
+            <br>
+            <br>
+            <br>
+            <form>
+                <label>Name: (required)</label>
+                <br>
+                <input type = "text">
+            </form>
+            <br>
+            <form>
+                <label>Email: (required)</label>
+                <br>
+                <input type = "email">
+            </form>
+            <br>
+            <form>
+                <label>Ticket Quantity: (required)</label>
+                <br>
+                <input type = "number">
+            </form>
+
+            <br>
+            <form>
+                <label>Date: (Required)</label>
+                <br>
+                <input type = "date">
+            </form>
+            <br>
+            <form>
+                <input type = "submit" >
+                <button type="button" onclick="submitPurchase()">Buy Tickets</button>
+            </form>
+        </figure>
+
+        
+        <footer class="footer">
+            © MonoMuse. All rights reserved.
+            <p id="copyYear"></p>
+        </footer>
+    </div>
+</body>
+</html>
