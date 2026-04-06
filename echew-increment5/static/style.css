@@ -1,0 +1,282 @@
+*{
+    padding: 5px;
+    margin: 5px;
+    background: #FFF9E5;
+    color: #2D2926;
+
+    font-family: Roboto, Helvetica, Arial, sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 100;
+    line-height: 1.5;
+    font-weight: 400;
+    /* border: 1px solid white; */
+}
+
+.logo-chunky {
+  font-family: 'Cooper Black', serif; /* The ultimate "burger" font */
+  font-size: 2rem;
+  color: #3e2723; /* Deep brown like grilled meat */
+  text-decoration: none;
+}
+
+.logo-chunky span {
+  background: #FFB800; /* Highlight "Burger" in gold */
+  padding: 0 10px;
+  border-radius: 50px; /* Makes the background look like a bun */
+  color: white;
+}
+
+#checkoutButton {
+  width: 18%;
+  display: block;
+}
+
+.image {
+  width: 49vw;
+}
+
+#logo {
+  height:50px;
+  display: block;
+}
+.checkout {
+    display: inline-block;
+    background-color: #2E4F3F; 
+    color: white;              
+    font-weight: 200;         
+}
+
+
+
+nav a {
+  text-decoration: none;
+  color: #2D2926;
+  font-weight: 400;
+  padding: 8px 10px;
+  border: 1px solid transparent;
+  border-radius: 12px;
+}
+
+nav a:hover {
+  border-color: #2D2926;
+  font-weight: 900;
+  }
+
+#longIntro { display: none; }
+#readLess { display: none; }
+#buyTicket { display: none; }
+
+
+.active {
+  color:#92ad70;    
+  border-bottom: 2px solid #92ad70;
+  padding-bottom: 2px;
+}
+
+.activeCheckout {
+  color:white;    
+  border-bottom: 5px solid #FFB800;
+  border-top: 5px solid #FFB800;
+  padding-bottom: 2px;
+}
+
+.activeCheckout {
+  background-color: #2E4F3F; /* Keep the dark pickle green */
+  color: #FFB800 !important; /* Switch text to Gold to show it's active */
+  border: 2px solid #FFB800; /* Add a gold border to match your bun-logo theme */
+  border-radius: 12px;
+  font-weight: 800;
+  padding: 8px 10px;
+  cursor: default; /* Tells the user they are already here */
+}
+
+footer {
+  border-top: 1px solid rgba(245,245,247,.12);
+  padding: 18px 16px;
+  text-align: center;
+  color: rgba(245,245,247,.72);
+  font-weight: bold;
+  }
+
+
+th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  width: fit-content;
+  border-bottom: 1px solid #ddd;
+}
+/* 
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+  border-bottom: 1px solid #ddd;
+} */
+
+
+form * {
+  margin: auto;
+  text-align: center;
+}
+
+
+.container {
+  display: grid; /* Turns this div into a CSS Grid layout */
+  min-width: 100vh;
+  grid-template-rows: 100px 75px auto 50px;
+  grid-template-columns: 600px auto;
+  grid-template-areas:   /* Defines the layout structure */
+    'header header'
+    'nav_bar nav_bar'
+    'main main-img'
+    'footer footer';
+}
+
+/* Places each element into the correct area of the grid */
+.header {
+   grid-area: header; 
+   display: grid;
+   justify-content: center;
+
+}
+
+.nav_bar {
+  grid-area: nav_bar;
+  display: flex; /* Uses Flexbox for internal layout */
+  justify-content: center;   /* center aligns the content */
+}
+.main {
+  grid-area: main; 
+  display: flexbox;
+
+}
+
+.calendar {
+  grid-area: main; 
+  display: flex;
+  align-items: center;     /* Centers the table vertically */
+  flex-direction: column;  /* Ensures things stack if you add more text */
+  overflow: auto;
+}
+
+
+.main_img {
+   grid-area: main-img; 
+   min-width: 50vw;
+}
+
+.footer {
+   grid-area: footer;
+}
+
+
+/* Hide hamburger icon by default (desktop view) */
+.nav_bar a.icon {
+    display: none;
+}
+
+
+
+.video-responsive {
+    overflow: hidden;
+    padding-bottom: 56.25%; /* This creates the 16:9 aspect ratio */
+    position: relative;
+    height: 0;
+    margin: 20px 0; /* Adds some breathing room top and bottom */
+    border-radius: 12px; /* Matches your Burger Museum aesthetic */
+}
+
+.video-responsive iframe {
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+
+#map { 
+  height: 30vw; 
+  width: 50vw;
+  background: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+
+#map div {
+    background: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+#map img{
+    background: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* ---- Mobile layout: screens smaller than 650px ---- */
+@media only screen and (max-width: 650px) {
+
+
+
+  .logo-chunky {
+        font-size: 1.4rem;      /* Shrink from 2rem to fit the width */
+        white-space: nowrap;    /* This is the "magic" line: it forbids the text from wrapping */
+        display: block;         /* Ensures it takes up its own line in the grid */
+        text-align: center;     /* Centers it nicely */
+        width: 100%;            /* Uses the full width of the header */
+    }
+
+    .logo-chunky span {
+        padding: 0 6px;         /* Slightly reduce the bun padding so it's not too bulky */
+    }
+
+    /* Stack the grid into a single column */
+    .container {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        grid-template-areas:
+            'header'
+            'nav_bar'
+            'main'
+            'footer';
+        min-width: unset;
+        width: 100%;
+    }
+
+    /* Hide the image panel on mobile */
+    .main_img {
+        display: none;
+    }
+
+    /* Hide all nav links on small screens */
+    .nav_bar a {
+        display: none;
+    }
+
+    /* Show the hamburger icon */
+    .nav_bar a.icon {
+        display: inline-block;
+        float: right;
+    }
+
+    /* When ResponsiveNavBar() adds the "responsive" class:
+       show all links stacked vertically */
+    .nav_bar.responsive {
+        flex-direction: column;
+        align-items: flex-start;
+        position: relative;
+    }
+
+    .nav_bar.responsive a {
+        display: block;
+        float: none;
+        text-align: left;
+    }
+
+    .nav_bar.responsive a.icon {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+}
+

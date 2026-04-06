@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Eu-Rway" content="Eu-Rway">
+    <meta name="keywords" content="Museum, Carnegie Mellon University, Information Systems">
+    <meta name="description" content="MonoMuse website redesign project">
+    
+    <link rel="stylesheet" href="./static/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <script src="./static/script.js" defer></script>
+    <script
+        src="https://code.jquery.com/jquery-4.0.0.min.js"
+        integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao="
+        crossorigin="anonymous">
+    </script>
+    <title>MonoMuse</title>
+
+</head>
+
+<body>
+    <div class="container"> 
+        <header class="header">
+            <a href="/" class="logo-chunky">The <span>Burger</span> Museum</a>
+        </header>
+        <nav class="nav_bar" id="navbar">
+            <a href="index.html">Home</a>
+            <a href="./views/explore.html">Explore</a>
+            <a href="./views/exhibitions.html">Exhibitions</a>
+            <a href="./views/visitInfo.html">Visit Info</a>
+            <a class="checkout" href="./views/checkout.html">Checkout</a>
+            <a href="javascript:void(0);" class="icon" onclick="ResponsiveNavBar()">
+                <i class="fa fa-bars"></i>
+            </a>
+        </nav>
+        <main class="main">
+            <h2 id="greetingTime">Welcome to the MonoMuse Museum</h2>
+            
+            <div class="video-responsive">
+                <iframe 
+                    src="https://www.youtube-nocookie.com/embed/z5hwo3XxN0c?si=jlRHqeseKEohl9fA" 
+                    title="YouTube video player" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    referrerpolicy="strict-origin-when-cross-origin" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+
+
+            <p id="longIntro">Nestled in the heart of Pittsburgh’s vibrant North Shore, MonoMuse is the world’s premier destination for the art, science, and history of the global burger. We believe the burger is more than just a meal—it is a design marvel, a cultural touchstone, and a canvas for boundless creativity. From the industrial sizzle of the early 20th century to the sustainable food technologies being forged in partnership with Carnegie Mellon University, our immersive exhibits invite you to explore how a simple handheld icon became a global phenomenon. Whether you are here to marvel at the architecture of the perfect bun or to trace the DNA of the modern patty, MonoMuse offers a seat at the table for everyone. Join us as we celebrate the grit, ingenuity, and flavor that define our culinary heritage.</p>
+            <button id="readMore">Read More</button>
+            <button id="readLess">Read Less</button>
+            <a href="./views/checkout.html">Buy Tickets</a>
+        </main>
+        <footer class="footer">
+            <p>© MonoMuse. All rights reserved.</p>
+            <p id="copyYear"></p>
+        </footer>
+    </div>
+</body>
+</html>
+
