@@ -29,39 +29,37 @@
         </header>
         <nav class="nav_bar" id="navbar">
             <a href="index.html">Home</a>
-            <a href="./views/explore.html">Explore</a>
-            <a href="./views/exhibitions.html">Exhibitions</a>
+            <a href="./views/explore.html">Gordon Ramsay Exhibit</a>
             <a href="./views/visitInfo.html">Visit Info</a>
-            <a class="checkout" href="./views/checkout.html">Checkout</a>
+            <a class="checkout" href="./views/checkout.html">Buy Tickets</a>
             <a href="javascript:void(0);" class="icon" onclick="ResponsiveNavBar()">
                 <i class="fa fa-bars"></i>
             </a>
         </nav>
-        <main class="main">
-            <h2 id="greetingTime">Welcome to the MonoMuse Museum</h2>
-            
-            <div class="video-responsive">
-                <iframe 
-                    src="https://www.youtube-nocookie.com/embed/z5hwo3XxN0c?si=jlRHqeseKEohl9fA" 
-                    title="YouTube video player" 
-                    frameborder="0" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                    referrerpolicy="strict-origin-when-cross-origin" 
-                    allowfullscreen>
-                </iframe>
+        <main class="secondRow">
+            <div class="hero-content">
+                <h1 id="dynamicHeading" class="hero-title">Discover America's Greatest Pastime</h1>
+                <h2 id="greetingTime" class="hero-subtitle">Welcome to The Burger Museum</h2>
             </div>
 
+            <div class="hero-image-wrap">
+                <img src="./static/MonoMuseOutside(1).png" alt="MonoMuse Exterior" class="main-hero-img">
+            </div>
 
-            <p id="longIntro">Nestled in the heart of Pittsburgh’s vibrant North Shore, MonoMuse is the world’s premier destination for the art, science, and history of the global burger. We believe the burger is more than just a meal—it is a design marvel, a cultural touchstone, and a canvas for boundless creativity. From the industrial sizzle of the early 20th century to the sustainable food technologies being forged in partnership with Carnegie Mellon University, our immersive exhibits invite you to explore how a simple handheld icon became a global phenomenon. Whether you are here to marvel at the architecture of the perfect bun or to trace the DNA of the modern patty, MonoMuse offers a seat at the table for everyone. Join us as we celebrate the grit, ingenuity, and flavor that define our culinary heritage.</p>
-            <button id="readMore">Read More</button>
-            <button id="readLess">Read Less</button>
-            <a href="./views/checkout.html">Buy Tickets</a>
+            <div class="info-section">
+                <p id="longIntro">Nestled in the heart of Pittsburgh’s vibrant North Shore, The Burger Musuem is the world’s premier destination for the art, science, and history of the global burger. We believe the burger is more than just a meal—it is a design marvel, a cultural touchstone, and a canvas for boundless creativity. From the industrial sizzle of the early 20th century to the sustainable food technologies being forged in partnership with Carnegie Mellon University, our immersive exhibits invite you to explore how a simple handheld icon became a global phenomenon. Whether you are here to marvel at the architecture of the perfect bun or to trace the DNA of the modern patty, The Burger Museum offers a seat at the table for everyone. Join us as we celebrate the grit, ingenuity, and flavor that define our culinary heritage.</p>
+                <div class="home-actions">
+                    <button id="readMore" class="btn-secondary">Read More</button>
+                    <button id="readLess" class="btn-secondary">Read Less</button>
+                    <a href="./views/checkout.html" class="checkoutButton">Buy Tickets</a>
+                </div>
+            </div>
         </main>
-        <footer class="footer">
-            <p>© MonoMuse. All rights reserved.</p>
-            <p id="copyYear"></p>
-        </footer>
-    </div>
+    </div> 
+    <footer class="footer">
+        <p>© The Burger Musuem. All rights reserved.</p>
+        <p id="copyYear"></p>
+    </footer>
 </body>
 </html>
 

@@ -27,148 +27,82 @@
         </header>
         <nav class="nav_bar">
             <a href="../index.html">Home</a>
-            <a href="explore.html">Explore</a>
-            <a href="exhibitions.html">Exhibitions</a>
+            <a href="explore.html">Gordon Ramsay Exhibit</a>
             <a href="visitInfo.html ">Visit Info</a>
-            <a class = "checkout" href="checkout.html">Checkout</a>
+            <a class = "checkout" href="checkout.html">Buy Tickets</a>
             <a href="javascript:void(0);" class="icon" onclick="ResponsiveNavBar()">
                 <i class="fa fa-bars"></i>
             </a>
         </nav>
         <main class="main calendar">
-            <table>
-                <caption><h3>April 2026</h3></caption>
+            <table class="schedule-calendar" id="scheduleTable"></table>
+            
+        </main>
+        <div class ="main-img">
+            <aside class="aside-prices">
+            <table class="price-table">
                 <thead>
                     <tr>
-                        <th>Sun</th>
-                        <th>Mon</th>
-                        <th>Tue</th>
-                        <th>Wed</th>
-                        <th>Thu</th>
-                        <th>Fri</th>
-                        <th>Sat</th>
+                        <th colspan="2">Admission Pricing</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td>1</td>
-                        <td>2</td>
-                        <td>3</td>
-                        <td>4</td>
-                    </tr>
-                    <tr>
-                        <td>5</td>
-                        <td>6</td>
-                        <td>7</td>
-                        <td>8</td>
-                        <td>9</td>
-                        <td>10</td>
-                        <td>11</td>
-                    </tr>
-                    <tr>
-                        <td>12</td>
-                        <td>13</td>
-                        <td>14</td>
-                        <td>15</td>
-                        <td>16</td>
-                        <td>17</td>
-                        <td>18</td>
-                    </tr>
-                    <tr>
-                        <td>19</td>
-                        <td>20</td>
-                        <td>21</td>
-                        <td>22</td>
-                        <td>23</td>
-                        <td>24</td>
-                        <td>25</td>
-                    </tr>
-                    <tr>
-                        <td>26</td>
-                        <td>27</td>
-                        <td>28</td>
-                        <td>29</td>
-                        <td>30</td>
-                        <td></td>
-                        <td></td>
-                    </tr>
+                    <tr><td>Adults</td><td>$18</td></tr>
+                    <tr><td>Seniors</td><td>$14</td></tr>
+                    <tr><td>Teens (12-18)</td><td>$12</td></tr>
+                    <tr><td>Children (Under 12)</td><td>Free</td></tr>
                 </tbody>
             </table>
-            
-            <button id="readMore">Buy Ticket</button>
-            <button id="readLess">Nah, I don't want to buy a ticket anymore :(</button>
-            <show id ="buyTicket">
-                <form >
-                    <label>Name: (required)</label>
-                    <br>
-                    <input type = "text">
-                </form>
-                <br>
-                <form>
-                    <label>Email: (required)</label>
-                    <br>
-                    <input type = "email">
-                </form>
-                <br>
-                <form>
-                    <label>Ticket Quantity: (required)</label>
-                    <br>
-                    <input type = "number">
-                </form>
+        </aside>
+        </div>
 
-                <br>
-                <form>
-                    <label>Date: (Required)</label>
-                    <br>
-                    <input type = "date">
-                </form>
-                <br>
-                <form>
-                    <input type = "submit" onclick="submitPurchase()">
 
-                </form>
-                
-            </show>
-            
+    <div class="secondRow">
+        
 
-        </main>
-        <table class = "main_img" >
-                <tr>
-                    <th>Ticket Type</th>
-                    <th>Description</th>
-                    <th>Price</th>
-                </tr>
-                <tr>
-                    <td>Adult</td>
-                    <td>General Admission</td>
-                    <td>$18</td>
-                </tr>
-                <tr>
-                    <td>Student</td>
-                    <td>With valid University ID (CMU/Pitt/etc.)</td>
-                    <td>$12</td>
-                </tr>
-                <tr>
-                    <td>Senior</td>
-                    <td>Ages 65+</td>
-                    <td>$14</td>
-                </tr>
-                <tr>
-                    <td>Children</td>
-                    <td>Ages 5-12 (Under 5 are Free)</td>
-                    <td>$10</td>
-                </tr>
-                <tr>
-                    <td>Annual Membership</td>
-                    <td>Unlimited Entry</td>
-                    <td>$60</td>
-                </tr>
-            </table>
+        <div id="ticket-purchase-area" style="display: none; width: 100%; max-width: 400px;">
+    <h3 class="checkout-header">Complete Your Purchase</h3>
+    <form id="main-ticket-form" onsubmit="event.preventDefault(); submitPurchase();">
+        <div class="form-group">
+            <label for="cust-name">Full Name:</label>
+            <input type="text" id="cust-name" required placeholder="John Doe" style="width: 180px;">
+        </div>
 
-        <footer class="footer">
-            <p>© MonoMuse. All rights reserved.</p>
-            <p id="copyYear"></p>
-        </foo
+        <div class="form-group">
+            <label for="cust-email">Email Address:</label>
+            <input type="email" id="cust-email" required placeholder="john@example.com" style="width: 180px;">
+        </div>
+
+        <div class="form-group">
+            <label>Selected Visit Date:</label>
+            <input type="date" id="visitDate" required readonly>
+        </div>
+        
+        <div class="form-group">
+            <label>Adults ($18):</label>
+            <input type="number" id="qty-adult" class="calc-input" min="0" value="0">
+        </div>
+
+        <div class="form-group">
+            <label>Seniors ($14):</label>
+            <input type="number" id="qty-senior" class="calc-input" min="0" value="0">
+        </div>
+
+        <div class="form-group">
+            <label>Teens ($12):</label>
+            <input type="number" id="qty-teen" class="calc-input" min="0" value="0">
+        </div>
+
+        <div class="total-display">
+            Total Price: <span id="total-price">$0</span>
+        </div>
+
+        <button type="submit" class="checkoutButton">Confirm & Pay</button>
+        </form>
+    </div>
+    </div>
+</div>
+    <footer class="footer">
+        <p>© The Burger Musuem. All rights reserved.</p>
+        <p id="copyYear"></p>
+    </footer>
