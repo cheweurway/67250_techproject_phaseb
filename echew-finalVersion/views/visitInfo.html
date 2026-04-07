@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Eu-Rway" content="Eu-Rway">
+    <meta name="keywords" content="Museum, Carnegie Mellon University, Information Systems">
+    <meta name="description" content="MonoMuse website redesign project">
+    <link rel="stylesheet" href="../static/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+     crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+     crossorigin=""></script>
+    <script src="../static/script.js" defer></script>
+    <script
+        src="https://code.jquery.com/jquery-4.0.0.min.js"
+        integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao="
+        crossorigin="anonymous">
+    </script>
+    <title>MonoMuse</title>
+</head>
+<body>
+    <div class="container"> 
+        <header class="header">
+            <a href="/" class="logo-chunky">The <span>Burger</span> Museum</a>
+        </header>
+        <nav class="nav_bar" id="navbar">
+            <a href="../index.html">Home</a>
+            <a href="explore.html">Gordon Ramsay Exhibit</a>
+            <a href="visitInfo.html">Visit Info</a>
+            <a class="checkout" href="checkout.html">Buy Tickets</a>
+            <a href="javascript:void(0);" class="icon" onclick="ResponsiveNavBar()">
+                <i class="fa fa-bars"></i>
+            </a>
+        </nav>
+        <main class="main">
+            <h1>Plan Your Visit</h1>
+            <h2>Location & Directions</h2>
+            <h3>117 Sandusky Street, Pittsburgh, PA 15212</h3>
+            <h3>We are located on the North Shore, steps from the Andy Warhol Bridge. We are open everyday 10AM - 6PM. </h3>
+            <table >
+                <tr>
+                    <th>Ticket Type</th>
+                    <th>Description</th>
+                    <th>Price</th>
+                </tr>
+                <tr>
+                    <td>Adult</td>
+                    <td>General Admission</td>
+                    <td>$18</td>
+                </tr>
+                <tr>
+                    <td>Seniors</td>
+                    <td>Ages Over 65</td>
+                    <td>$14</td>
+                </tr>
+                <tr>
+                    <td>Teens</td>
+                    <td>Ages 12 to 18</td>
+                    <td>$12</td>
+                </tr>
+                <tr>
+                    <td>Children</td>
+                    <td>Ages Under 12</td>
+                    <td>Free</td>
+                </tr>
+            </table>
+            
+            <a href="/views/checkout.html" class = "checkoutButton">Buy Tickets</a>
+        </main>
+        <div class="main-img">
+            <div id="map"></div>
+            
+            
+        </div>
+        
+        </div> <footer class="footer">
+        <p>© The Burger Musuem. All rights reserved.</p>
+        <p id="copyYear"></p>
+    </footer>
+</body>
+</html>
