@@ -39,7 +39,7 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    margin-top: 25px;
+
     background-color: #2E4F3F;
     color: #FFF9E5 !important;
     text-decoration: none;
@@ -118,6 +118,10 @@ nav a:hover {
     cursor: pointer;
     font-weight: bold;
     transition: all 0.3s ease;
+    height: 46px; /* Match the height of the checkoutButton */
+    display: inline-flex;
+    align-items: center;
+    box-sizing: border-box;
 }
 
 .btn-secondary:hover {
@@ -534,73 +538,127 @@ form * {
     line-height: 1.2; /* Added to keep lines tight if they do wrap */
 }
 
-
-
 /* ---- Mobile layout: screens smaller than 650px ---- */
 @media only screen and (max-width: 650px) {
-
-
-
-  .logo-chunky {
-        font-size: 1.4rem;      /* Shrink from 2rem to fit the width */
-        white-space: nowrap;    /* This is the "magic" line: it forbids the text from wrapping */
-        display: block;         /* Ensures it takes up its own line in the grid */
-        text-align: center;     /* Centers it nicely */
-        width: 100%;            /* Uses the full width of the header */
-    }
-
-    .logo-chunky span {
-        padding: 0 6px;         /* Slightly reduce the bun padding so it's not too bulky */
-    }
-
-    /* Stack the grid into a single column */
     .container {
+        display: grid;
         grid-template-columns: 1fr;
-        grid-template-rows: auto;
+        /* Use 'auto' for all rows to let content dictate height while staying centered */
+        grid-template-rows: auto auto auto auto auto; 
         grid-template-areas:
             'header'
             'nav_bar'
             'main'
-            'main-img'
+            'secondRow'
             'footer';
-        min-width: unset;
+        width: 100%;
+        justify-items: center; /* Centers grid items horizontally in their tracks */
+    }
+
+    /* Center the Header/Logo */
+    .header {
+        grid-area: header;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        padding: 20px 0;
+    }
+
+    /* Center the Nav Bar and its Icon */
+    .nav_bar {
+        grid-area: nav_bar;
+        width: 100%;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Centers links horizontally */
+        justify-content: center;
+        min-height: 60px;
+    }
+
+    .nav_bar a.icon {
+        display: block !important;
+        position: absolute;
+        right: 20px;
+        top: 10px; /* Fixed distance from top keeps it stable */
+        font-size: 2rem;
+        background: transparent !important;
+    }
+
+    /* Center the Main Content (Title and Subtitle) */
+    .secondRow {
+        grid-area: main; /* Mapping to the main area for mobile flow */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        width: 100%;
+        padding: 20px;
+        gap: 20px;
+    }
+
+    /* Ensure the buttons in the home-actions are centered and stacked */
+    .home-actions {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
         width: 100%;
     }
 
-    /* Hide the image panel on mobile */
-    .main_img {
-        
+    /* Reset button widths for mobile centering */
+    .btn-secondary, .checkoutButton {
+        width: 80%; /* Consistent width makes them look centered/balanced */
+        max-width: 300px;
+        justify-content: center;
     }
 
-    /* Hide all nav links on small screens */
-    .nav_bar a {
-        display: none;
-    }
-
-    /* Show the hamburger icon */
-    .nav_bar a.icon {
-        display: inline-block;
-        float: right;
-    }
-
-    /* When ResponsiveNavBar() adds the "responsive" class:
-       show all links stacked vertically */
+    /* Navigation link styling when menu is open */
     .nav_bar.responsive {
-        flex-direction: column;
-        align-items: flex-start;
-        position: relative;
+        padding-top: 60px; /* Space for the logo/hamburger */
     }
 
-    .nav_bar.responsive a {
+    .nav_bar.responsive a:not(.icon) {
         display: block;
-        float: none;
-        text-align: left;
+        width: 100%;
+        text-align: center;
+        padding: 15px 0;
+        border-bottom: 1px solid rgba(0,0,0,0.05);
+    }
+    
+    .hero-title {
+        font-size: 1.8rem !important;
+        width: 90%;
+        margin: 0 auto !important;
     }
 
-    .nav_bar.responsive a.icon {
-        position: absolute;
-        right: 0;
-        top: 0;
+    .hero-image-wrap {
+        width: 90%;
+        display: flex;
+        justify-content: center;
+    }
+    #navbar.responsive ~ .secondRow,
+    #navbar.responsive ~ .footer,
+    #navbar.responsive ~ main {
+        display: none !important;
+    }
+
+    .nav_bar.responsive {
+        height: 100vh;
+        padding-top: 80px;
+        background: #FFF9E5;
+        z-index: 99;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav_bar.responsive a:not(.icon) {
+        display: block;
+        width: 100%;
+        text-align: center;
+        padding: 20px 0;
+        font-size: 1.5rem; /* Larger links for the full-screen menu */
+        border-bottom: 1px solid rgba(0,0,0,0.05);
     }
 }
-
