@@ -1,8 +1,9 @@
-*{
+/* style.css — Global styles for The Burger Museum */
 
+/* Global reset: site-wide font, background, and text color */
+*{
     background: #FFF9E5;
     color: #2D2926;
-
     font-family: Roboto, Helvetica, Arial, sans-serif;
     font-optical-sizing: auto;
     font-weight: 100;
@@ -11,35 +12,36 @@
     /* border: 1px solid white; */
 }
 
-
-
+/* Site logo */
 .logo-chunky {
-  font-family: 'Cooper Black', serif; /* The ultimate "burger" font */
+  font-family: 'Cooper Black', serif;
   font-size: 2rem;
-  color: #3e2723; /* Deep brown like grilled meat */
+  color: #3e2723;
   text-decoration: none;
 }
 
 .logo-chunky span {
-  background: #FFB800; /* Highlight "Burger" in gold */
+  background: #FFB800;
   padding: 0 10px;
-  border-radius: 50px; /* Makes the background look like a bun */
+  border-radius: 50px;
   color: white;
 }
+
+/* "Buy Tickets" nav link styled as a filled button */
 .checkout {
     display: inline-block;
-    background-color: #2E4F3F !important; /* Ensure background applies */
+    background-color: #2E4F3F !important;
     color: white !important;
-    padding: 10px 20px !important; Give it its own internal space
+    padding: 10px 20px !important; /* Give it its own internal space */
     text-decoration: none;
 }
 
+/* Primary CTA button */
 .checkoutButton {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-
     background-color: #2E4F3F;
     color: #FFF9E5 !important;
     text-decoration: none;
@@ -63,6 +65,7 @@
     transform: translateY(-3px);
     box-shadow: 0 6px 12px rgba(0,0,0,0.15);
 }
+
 .image {
   width: 49vw;
 }
@@ -72,12 +75,7 @@
   display: block;
 }
 
-
-
-
-
-
-
+/* Nav link base styles */
 nav a {
   text-decoration: none;
   color: #2D2926;
@@ -90,18 +88,20 @@ nav a {
 nav a:hover {
   border-color: #2D2926;
   font-weight: 900;
-  }
-
-#longIntro { 
-  display: none; 
-  max-width: 800px;
-    margin: 0 auto;
-    line-height: 1.8;
-    text-align: center;
-    font-size: 1.1rem;
-    padding: 0 20px;
 }
 
+/* Homepage intro paragraph: hidden by default, shown via Read More */
+#longIntro {
+  display: none;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.8;
+  text-align: center;
+  font-size: 1.1rem;
+  padding: 0 20px;
+}
+
+/* Homepage action button row */
 .home-actions {
     display: flex;
     justify-content: center;
@@ -110,6 +110,7 @@ nav a:hover {
     align-items: center;
 }
 
+/* Outline-style secondary button */
 .btn-secondary {
     background: transparent;
     border: 2px solid #3e2723;
@@ -118,7 +119,7 @@ nav a:hover {
     cursor: pointer;
     font-weight: bold;
     transition: all 0.3s ease;
-    height: 46px; /* Match the height of the checkoutButton */
+    height: 46px;
     display: inline-flex;
     align-items: center;
     box-sizing: border-box;
@@ -132,34 +133,34 @@ nav a:hover {
 #readLess { display: none; }
 #buyTicket { display: none; }
 
-
+/* Active nav link states */
 .active {
-  color:#92ad70;    
+  color:#92ad70;
   border-bottom: 2px solid #92ad70;
   padding-bottom: 2px;
 }
 
 .activeCheckout {
-  color:white;    
+  color:white;
   border-bottom: 5px solid #FFB800;
   border-top: 5px solid #FFB800;
 }
 
 .activeCheckout {
-  background-color: #2E4F3F; /* Keep the dark pickle green */
-  color: #FFB800 !important; /* Switch text to Gold to show it's active */
-  border: 2px solid #FFB800; /* Add a gold border to match your bun-logo theme */
+  background-color: #2E4F3F;
+  color: #FFB800 !important;
+  border: 2px solid #FFB800;
   border-radius: 12px;
 }
 
+/* Footer */
 footer {
   border-top: 1px solid rgba(245,245,247,.12);
   padding: 0% 16px;
   text-align: center;
   color: rgba(245,245,247,.72);
   font-weight: bold;
-  }
-
+}
 
 th {
   padding-top: 12px;
@@ -168,12 +169,14 @@ th {
   border-bottom: 1px solid #ddd;
 }
 
+/* Checkout form layout */
 form * {
   margin: auto;
   text-align: center;
 }
+
 .form-group {
-    margin-bottom: 8px; /* Reduced from 15px */
+    margin-bottom: 8px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -189,13 +192,12 @@ form * {
     padding: 4px;
 }
 
-
+/* Main page grid layout */
 .container {
     display: grid;
     min-height: 100vh;
-    /* Reduced row heights from 100px/75px to auto/fit-content */
-    grid-template-rows: 75px 60px 1fr auto 10px; 
-    grid-template-columns: 1fr 1fr ;
+    grid-template-rows: 75px 60px 1fr auto 10px;
+    grid-template-columns: 1fr 1fr;
     grid-template-areas:
         'header header'
         'nav_bar nav_bar'
@@ -207,27 +209,25 @@ form * {
 .secondRow {
     grid-area: secondRow;
     display: flex;
-    flex-direction: column; /* Horizontal layout */
-    flex-wrap: wrap;     /* Allows stacking on small screens */
+    flex-direction: column;
+    flex-wrap: wrap;
     justify-content: center;
     text-align: center;
     align-items: center;
-    gap: 40px;           /* Controlled spacing between elements */
+    gap: 40px;
     padding: 20px;
     margin-top: 0;
 }
 
-/* Places each element into the correct area of the grid */
 .header {
-   grid-area: header; 
+   grid-area: header;
    display: grid;
    justify-content: center;
    padding: 15px 0;
-
 }
 
 .total-display {
-    margin: 10px 0; /* Reduced from 20px */
+    margin: 10px 0;
     padding: 5px;
 }
 
@@ -235,36 +235,36 @@ form * {
     grid-area: nav_bar;
     display: flex;
     justify-content: center;
-    align-items: center; /* Vertically center links */
-    gap: 20px;           /* Use gap instead of margins for spacing */
+    align-items: center;
+    gap: 20px;
     padding: 20px 0;
 }
-/* Center the calendar and pricing horizontally in their halves */
+
 .main.calendar, .main-img {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center; /* This pulls them away from the top */
+    justify-content: center;
     padding: 40px;
 }
 
-/* Make the actual calendar table larger */
+/* Checkout calendar table */
 .schedule-calendar {
-    width: 80%; /* Increased from default */
+    width: 80%;
     max-width: 500px;
-    font-size: 1.2rem; /* Makes the dates easier to read */
+    font-size: 1.2rem;
     border-collapse: separate;
     border-spacing: 10px;
 }
 
-/* Make the pricing table look professional and wide */
+/* Admission pricing table */
 .price-table {
     width: 100%;
     max-width: 400px;
     border-collapse: collapse;
 }
 
-/* Container to hold the slider and the absolute buttons */
+/* Slideshow wrapper: allows prev/next buttons to overlay the images */
 .slideshow-container {
     position: relative;
     width: 100%;
@@ -273,13 +273,13 @@ form * {
 
 .slideshow {
     display: flex;
-    overflow-x: hidden; /* Changed from 'auto' to 'hidden' for a cleaner look */
+    overflow-x: hidden;
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
     border-radius: 15px;
 }
 
-/* Style for both buttons */
+/* Slideshow arrow buttons */
 .prev, .next {
     cursor: pointer;
     position: absolute;
@@ -293,9 +293,9 @@ form * {
     transition: 0.6s ease;
     border-radius: 0 3px 3px 0;
     user-select: none;
-    background-color: rgba(0,0,0,0.3); /* Transparent black */
+    background-color: rgba(0,0,0,0.3);
     border: none;
-    z-index: 10; /* Ensures buttons stay on top of images */
+    z-index: 10;
 }
 
 .next {
@@ -308,7 +308,7 @@ form * {
 }
 
 .prev:hover, .next:hover {
-    background-color: #FFB800; /* Use your "Bun" gold on hover */
+    background-color: #FFB800;
     color: #3e2723;
 }
 
@@ -325,33 +325,31 @@ form * {
     font-weight: 500;
 }
 
-/* Styling for dates that cannot be booked */
+/* Past calendar dates: greyed out and non-clickable */
 .date.passed {
     text-decoration: line-through;
-    color: #a0a0a0; /* Grey out the color */
+    color: #a0a0a0;
     cursor: not-allowed;
     opacity: 0.6;
 }
 
-/* Optional: remove hover effect for passed dates */
 .date.passed:hover {
     border-color: transparent !important;
     background: none !important;
 }
 
 .main {
-    grid-area: main; 
+    grid-area: main;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start; /* Align to top instead of center */
+    justify-content: flex-start;
     padding: 20px 40px;
 }
 
-/* Ensure text and email inputs are wider than the quantity number boxes */
 .form-group input{
     width: 200px;
     padding: 6px;
-    text-align: left; /* Names should align left, unlike numbers */
+    text-align: left;
     border: 1px solid #ccc;
     border-radius: 4px;
 }
@@ -359,32 +357,35 @@ form * {
 .hero-subtitle {
     font-family: 'Roboto', sans-serif;
     font-size: 1.2rem;
-    font-weight: 300; /* Light weight creates nice contrast with the chunky H1 */
-    color: #2E4F3F; /* Pickle Green */
+    font-weight: 300;
+    color: #2E4F3F;
     text-align: center;
     margin-bottom: 30px !important;
     text-transform: uppercase;
     letter-spacing: 2px;
 }
+
 .hero-image-wrap {
     width: 100%;
     max-width: 900px;
     margin: 0 auto 40px auto;
 }
+
 .main-hero-img {
     width: 100%;
     height: auto;
-    border-radius: 20px; /* Rounded corners make it look professional */
-    box-shadow: 0 15px 30px rgba(62, 39, 35, 0.15); /* Soft brown shadow */
+    border-radius: 20px;
+    box-shadow: 0 15px 30px rgba(62, 39, 35, 0.15);
 }
 
+/* Exhibit page hero text area */
 .hero-text {
     grid-area: main;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 0 10% 0 5%; /* Adds nice space on the left and right */
-    background: transparent !important; /* Overrides the * selector */
+    padding: 0 10% 0 5%;
+    background: transparent !important;
 }
 
 .hero-text h1 {
@@ -392,53 +393,53 @@ form * {
     font-size: 3.5rem;
     color: #3e2723;
     line-height: 1.1;
-    margin: 0 0 15px 0 !important; /* Forces the global margin to 0 */
-    text-shadow: 2px 2px 0px rgba(255, 184, 0, 0.2); /* Subtle gold shadow */
+    margin: 0 0 15px 0 !important;
+    text-shadow: 2px 2px 0px rgba(255, 184, 0, 0.2);
 }
 
+/* Exhibit bio paragraph */
 .exhibit-bio {
-    max-width: 700px;         /* Keeps the lines from being too long to read */
-    line-height: 1.8;         /* Adds "breathing room" between lines of text */
-    text-align: center;       /* Matches your secondRow alignment */
+    max-width: 700px;
+    line-height: 1.8;
+    text-align: center;
     font-size: 1.1rem;
-    color: #2D2926;           /* Your standard text color */
-    background: transparent !important; /* Overrides the * selector cream background */
-    margin: 30px 0 !important; /* Adds space above and below the paragraph */
+    color: #2D2926;
+    background: transparent !important;
+    margin: 30px 0 !important;
     font-weight: 400;
-    font-style: italic;       /* Makes it feel more like a "tribute" or quote */
+    font-style: italic;
 }
 
 .hero-text h2 {
     font-family: 'Roboto', sans-serif;
     font-size: 1.1rem;
-    color: #2E4F3F; /* Your Pickle Green */
+    color: #2E4F3F;
     font-weight: 400;
     letter-spacing: 2px;
     text-transform: uppercase;
     margin: 0 !important;
     padding: 10px 0 10px 20px !important;
-    border-left: 5px solid #FFB800; /* The gold "Bun" accent color */
+    border-left: 5px solid #FFB800;
 }
 
 .calendar {
-  grid-area: main; 
+  grid-area: main;
   display: flex;
-  align-items: center;     /* Centers the table vertically */
-  flex-direction: column;  /* Ensures things stack if you add more text */
+  align-items: center;
+  flex-direction: column;
   overflow: auto;
 }
 
-
+/* Right-column image/media area */
 .main-img {
   margin: 0;
-  grid-area: main-img; 
+  grid-area: main-img;
   min-width: 50vw;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: transparent !important; /* Forces it to ignore the * background */
+  background: transparent !important;
   padding: 0;
-    
 }
 
 .slideshow {
@@ -448,73 +449,65 @@ form * {
     scroll-behavior: smooth;
     border-radius: 15px;
     width: 100%;
-    max-width: 50vw; 
+    max-width: 50vw;
     box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-    background: transparent !important; /* Ensures images aren't covered by cream */
+    background: transparent !important;
     padding: 0 !important;
-    margin: 0 ;
-    margin-top: 10px ;
+    margin: 0;
+    margin-top: 10px;
 }
 
-/* Targeted fix for the images themselves */
 .slideshow img {
     flex: 0 0 100%;
     width: 100%;
     height: auto;
     object-fit: cover;
     scroll-snap-align: center;
-    background: none !important; /* This prevents the 'paint over' effect */
+    background: none !important;
     padding: 0 !important;
     margin: 0 !important;
 }
 
-/* Hide scrollbar */
 .slideshow::-webkit-scrollbar {
     display: none;
 }
 
-
 .footer {
-    grid-area: footer; /* Matches the area in your container */
+    grid-area: footer;
     width: 100%;
     text-align: center;
     padding: 20px 0;
-    align-self: end;   /* Forces it to the bottom of the row */
-    margin-top: auto;  /* Pushes it down if there is extra space */
+    align-self: end;
+    margin-top: auto;
     border-top: 1px solid rgba(0,0,0,0.1);
 }
 
-/* Hide hamburger icon by default (desktop view) */
+/* Hamburger icon: hidden on desktop, shown on mobile */
 .nav_bar a.icon {
     display: none;
 }
 
-
-
-
-
+/* Responsive video container (16:9) */
 .video-responsive {
     width: 50vw;
     margin: 20px auto;
-    /* This automatically calculates the height based on width */
-    aspect-ratio: 16 / 9; 
+    aspect-ratio: 16 / 9;
 }
 
 .video-responsive iframe {
     width: 100%;
     height: 100%;
     border: 0;
-    /* No absolute positioning needed here */
 }
 
-#map { 
-  height: 30vw; 
+/* Leaflet map container */
+#map {
+  height: 30vw;
   width: 50vw;
   background: none !important;
   margin: 0 !important;
   padding: 0 !important;
 }
-
 
 #map div {
     background: none !important;
@@ -528,23 +521,23 @@ form * {
     padding: 0 !important;
 }
 
+/* Hero title: fluid font size */
 .hero-title {
     font-family: 'Cooper Black', serif;
-    /* Reduced the minimum to 1.5rem, preferred to 3vw, and max to 2.5rem */
-    font-size: clamp(1.5rem, 3vw, 2.5rem); 
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
     color: #3e2723;
     text-align: center;
     margin: 20px 0 5px 0 !important;
-    line-height: 1.2; /* Added to keep lines tight if they do wrap */
+    line-height: 1.2;
 }
 
-/* ---- Mobile layout: screens smaller than 650px ---- */
+/* Mobile layout: screens smaller than 650px */
 @media only screen and (max-width: 650px) {
+
     .container {
         display: grid;
         grid-template-columns: 1fr;
-        /* Use 'auto' for all rows to let content dictate height while staying centered */
-        grid-template-rows: auto auto auto auto auto; 
+        grid-template-rows: auto auto auto auto auto;
         grid-template-areas:
             'header'
             'nav_bar'
@@ -552,10 +545,9 @@ form * {
             'secondRow'
             'footer';
         width: 100%;
-        justify-items: center; /* Centers grid items horizontally in their tracks */
+        justify-items: center;
     }
 
-    /* Center the Header/Logo */
     .header {
         grid-area: header;
         width: 100%;
@@ -564,30 +556,29 @@ form * {
         padding: 20px 0;
     }
 
-    /* Center the Nav Bar and its Icon */
     .nav_bar {
         grid-area: nav_bar;
         width: 100%;
         position: relative;
         display: flex;
         flex-direction: column;
-        align-items: center; /* Centers links horizontally */
+        align-items: center;
         justify-content: center;
         min-height: 60px;
     }
 
+    /* Hamburger icon: visible and positioned top-right on mobile */
     .nav_bar a.icon {
         display: block !important;
         position: absolute;
         right: 20px;
-        top: 10px; /* Fixed distance from top keeps it stable */
+        top: 10px;
         font-size: 2rem;
         background: transparent !important;
     }
 
-    /* Center the Main Content (Title and Subtitle) */
     .secondRow {
-        grid-area: main; /* Mapping to the main area for mobile flow */
+        grid-area: main;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -597,7 +588,6 @@ form * {
         gap: 20px;
     }
 
-    /* Ensure the buttons in the home-actions are centered and stacked */
     .home-actions {
         display: flex;
         flex-direction: column;
@@ -606,16 +596,14 @@ form * {
         width: 100%;
     }
 
-    /* Reset button widths for mobile centering */
     .btn-secondary, .checkoutButton {
-        width: 80%; /* Consistent width makes them look centered/balanced */
+        width: 80%;
         max-width: 300px;
         justify-content: center;
     }
 
-    /* Navigation link styling when menu is open */
     .nav_bar.responsive {
-        padding-top: 60px; /* Space for the logo/hamburger */
+        padding-top: 60px;
     }
 
     .nav_bar.responsive a:not(.icon) {
@@ -625,7 +613,7 @@ form * {
         padding: 15px 0;
         border-bottom: 1px solid rgba(0,0,0,0.05);
     }
-    
+
     .hero-title {
         font-size: 1.8rem !important;
         width: 90%;
@@ -637,6 +625,8 @@ form * {
         display: flex;
         justify-content: center;
     }
+
+    /* Hide page content when mobile full-screen nav is open */
     #navbar.responsive ~ .secondRow,
     #navbar.responsive ~ .footer,
     #navbar.responsive ~ main {
@@ -658,7 +648,7 @@ form * {
         width: 100%;
         text-align: center;
         padding: 20px 0;
-        font-size: 1.5rem; /* Larger links for the full-screen menu */
+        font-size: 1.5rem;
         border-bottom: 1px solid rgba(0,0,0,0.05);
     }
 }

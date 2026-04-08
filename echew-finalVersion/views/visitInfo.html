@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="Eu-Rway" content="Eu-Rway">
     <meta name="keywords" content="Museum, Carnegie Mellon University, Information Systems">
-    <meta name="description" content="MonoMuse website redesign project">
+    <meta name="description" content="VisitInfo">
     <link rel="stylesheet" href="../static/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
      crossorigin=""/>
+    <!-- Leaflet must load before script.js -->
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
      crossorigin=""></script>
@@ -26,10 +27,12 @@
     <title>MonoMuse</title>
 </head>
 <body>
-    <div class="container"> 
+    <div class="container">
         <header class="header">
             <a href="/" class="logo-chunky">The <span>Burger</span> Museum</a>
         </header>
+
+        <!-- Primary navigation -->
         <nav class="nav_bar" id="navbar">
             <a href="../index.html">Home</a>
             <a href="explore.html">Gordon Ramsay Exhibit</a>
@@ -39,12 +42,15 @@
                 <i class="fa fa-bars"></i>
             </a>
         </nav>
+
+        <!-- Visit details: address, hours, pricing table, and ticket CTA -->
         <main class="main">
             <h1>Plan Your Visit</h1>
             <h2>Location & Directions</h2>
             <h3>117 Sandusky Street, Pittsburgh, PA 15212</h3>
+            <h3>Our Phone Number: 412-687-1467</h3>
             <h3>We are located on the North Shore, steps from the Andy Warhol Bridge. We are open everyday 10AM - 6PM. </h3>
-            <table >
+            <table>
                 <tr>
                     <th>Ticket Type</th>
                     <th>Description</th>
@@ -56,31 +62,32 @@
                     <td>$18</td>
                 </tr>
                 <tr>
-                    <td>Seniors</td>
-                    <td>Ages Over 65</td>
+                    <td>Student</td>
+                    <td>Bring Student ID</td>
                     <td>$14</td>
-                </tr>
-                <tr>
-                    <td>Teens</td>
-                    <td>Ages 12 to 18</td>
-                    <td>$12</td>
                 </tr>
                 <tr>
                     <td>Children</td>
                     <td>Ages Under 12</td>
                     <td>Free</td>
                 </tr>
+                <tr>
+                    <td>Yearly Membership</td>
+                    <td>Members don't need to buy tickets. Just show your ID at the entrance!</td>
+                    <td>$35</td>
+                </tr>
+                
             </table>
-            
-            <a href="/views/checkout.html" class = "checkoutButton">Buy Tickets</a>
+            <a href="/views/checkout.html" class="checkoutButton">Buy Tickets</a>
         </main>
+
+        <!-- Interactive Leaflet map centered on the museum location -->
         <div class="main-img">
             <div id="map"></div>
-            
-            
         </div>
-        
-        </div> <footer class="footer">
+
+    </div>
+    <footer class="footer">
         <p>© The Burger Musuem. All rights reserved.</p>
         <p id="copyYear"></p>
     </footer>

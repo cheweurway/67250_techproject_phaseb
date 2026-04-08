@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="Eu-Rway" content="Eu-Rway">
     <meta name="keywords" content="Museum, Carnegie Mellon University, Information Systems">
-    <meta name="description" content="MonoMuse website redesign project">
+    <meta name="description" content="Gordon Ramsay Exhibit">
     <link rel="stylesheet" href="../static/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,14 +13,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <script src="../static/script.js" defer></script>
     <title>MonoMuse</title>
-
 </head>
 
 <body>
-    <div class="container"> 
+    <div class="container">
         <header class="header">
             <a href="/" class="logo-chunky">The <span>Burger</span> Museum</a>
         </header>
+
+        <!-- Primary navigation -->
         <nav class="nav_bar" id="navbar">
             <a href="../index.html">Home</a>
             <a href="explore.html">Gordon Ramsay Exhibit</a>
@@ -30,21 +31,20 @@
                 <i class="fa fa-bars"></i>
             </a>
         </nav>
-        
+
+        <!-- Exhibit hero text -->
         <main class="main hero-text">
             <h1>Gordon </h1>
             <h1>"It's F*cking Raw"</h1>
             <h1>Ramsay</h1>
             <h2>A Tribute to One Of The Greatest Chef That Lived</h2>
-    
         </main>
 
-        
+        <!-- Slideshow of exhibit photos with prev/next buttons -->
         <div class="main-img">
             <div class="slideshow-container">
                 <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
                 <button class="next" onclick="moveSlide(1)">&#10095;</button>
-                
                 <div class="slideshow" id="slider">
                     <img src="../static/GordonRamsayExhibit1.png" alt="Sizzle Station">
                     <img src="../static/GordonRamsayExhibit2.png" alt="Idiot Sandwich">
@@ -53,12 +53,13 @@
             </div>
         </div>
 
+        <!-- Bio paragraph and embedded YouTube video -->
         <div class="secondRow">
             <p class="exhibit-bio">
-                Renowned for his fiery temperament and unmatched culinary precision, Gordon Ramsay has 
-                transformed the world of haute cuisine. From his early days in London to becoming a 
-                global icon with 17 Michelin stars, this exhibit explores the man behind the "Idiot Sandwich." 
-                Discover the relentless drive for perfection that made him the most formidable force in 
+                Renowned for his fiery temperament and unmatched culinary precision, Gordon Ramsay has
+                transformed the world of haute cuisine. From his early days in London to becoming a
+                global icon with 17 Michelin stars, this exhibit explores the man behind the "Idiot Sandwich."
+                Discover the relentless drive for perfection that made him the most formidable force in
                 the modern kitchen. Watch the video below to understand how he makes the perfect burger.
             </p>
             <div class="video-responsive">
@@ -66,8 +67,8 @@
             </div>
         </div>
 
-     </div>
-     <footer class="footer">
+    </div>
+    <footer class="footer">
         <p>© The Burger Musuem. All rights reserved.</p>
         <p id="copyYear"></p>
     </footer>

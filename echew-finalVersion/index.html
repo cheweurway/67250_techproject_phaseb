@@ -6,27 +6,29 @@
     <meta name="Eu-Rway" content="Eu-Rway">
     <meta name="keywords" content="Museum, Carnegie Mellon University, Information Systems">
     <meta name="description" content="MonoMuse website redesign project">
-    
     <link rel="stylesheet" href="./static/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <script src="./static/script.js" defer></script>
+    <!-- jQuery for Read More / Read Less toggle -->
     <script
         src="https://code.jquery.com/jquery-4.0.0.min.js"
         integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao="
         crossorigin="anonymous">
     </script>
     <title>MonoMuse</title>
-
 </head>
 
 <body>
-    <div class="container"> 
+    <!-- Outer grid container -->
+    <div class="container">
         <header class="header">
             <a href="/" class="logo-chunky">The <span>Burger</span> Museum</a>
         </header>
+
+        <!-- Primary navigation -->
         <nav class="nav_bar" id="navbar">
             <a href="index.html">Home</a>
             <a href="./views/explore.html">Gordon Ramsay Exhibit</a>
@@ -36,18 +38,18 @@
                 <i class="fa fa-bars"></i>
             </a>
         </nav>
+
+        <!-- Hero section: time-based greeting, exterior photo, and collapsible intro -->
         <main class="secondRow">
             <div class="hero-content">
                 <h1 id="dynamicHeading" class="hero-title">Discover America's Greatest Pastime</h1>
                 <h2 id="greetingTime" class="hero-subtitle">Welcome to The Burger Museum</h2>
             </div>
-
             <div class="hero-image-wrap">
                 <img src="./static/MonoMuseOutside(1).png" alt="MonoMuse Exterior" class="main-hero-img">
             </div>
-
             <div class="info-section">
-                <p id="longIntro">Nestled in the heart of Pittsburgh’s vibrant North Shore, The Burger Musuem is the world’s premier destination for the art, science, and history of the global burger. We believe the burger is more than just a meal—it is a design marvel, a cultural touchstone, and a canvas for boundless creativity. From the industrial sizzle of the early 20th century to the sustainable food technologies being forged in partnership with Carnegie Mellon University, our immersive exhibits invite you to explore how a simple handheld icon became a global phenomenon. Whether you are here to marvel at the architecture of the perfect bun or to trace the DNA of the modern patty, The Burger Museum offers a seat at the table for everyone. Join us as we celebrate the grit, ingenuity, and flavor that define our culinary heritage.</p>
+                <p id="longIntro">Nestled in the heart of Pittsburgh's vibrant North Shore, The Burger Musuem is the world's premier destination for the art, science, and history of the global burger. We believe the burger is more than just a meal—it is a design marvel, a cultural touchstone, and a canvas for boundless creativity. From the industrial sizzle of the early 20th century to the sustainable food technologies being forged in partnership with Carnegie Mellon University, our immersive exhibits invite you to explore how a simple handheld icon became a global phenomenon. Whether you are here to marvel at the architecture of the perfect bun or to trace the DNA of the modern patty, The Burger Museum offers a seat at the table for everyone. Join us as we celebrate the grit, ingenuity, and flavor that define our culinary heritage.</p>
                 <div class="home-actions">
                     <button id="readMore" class="btn-secondary">Read More</button>
                     <button id="readLess" class="btn-secondary">Read Less</button>
@@ -55,11 +57,12 @@
                 </div>
             </div>
         </main>
-    </div> 
+    </div>
+
+    <!-- Footer: copyright year injected by script.js -->
     <footer class="footer">
         <p>© The Burger Musuem. All rights reserved.</p>
         <p id="copyYear"></p>
     </footer>
 </body>
 </html>
-

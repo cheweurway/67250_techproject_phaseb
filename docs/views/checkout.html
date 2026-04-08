@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="Eu-Rway" content="Eu-Rway">
     <meta name="keywords" content="Museum, Carnegie Mellon University, Information Systems">
-    <meta name="description" content="MonoMuse website redesign project">
+    <meta name="description" content="Checkout">
     <link rel="stylesheet" href="../static/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,92 +17,97 @@
         crossorigin="anonymous">
     </script>
     <title>MonoMuse</title>
-
 </head>
 
 <body>
-    <div class="container"> 
+    <div class="container">
         <header class="header">
             <a href="/" class="logo-chunky">The <span>Burger</span> Museum</a>
         </header>
+
         <nav class="nav_bar">
             <a href="../index.html">Home</a>
             <a href="explore.html">Gordon Ramsay Exhibit</a>
             <a href="visitInfo.html ">Visit Info</a>
-            <a class = "checkout" href="checkout.html">Buy Tickets</a>
+            <a class="checkout" href="checkout.html">Buy Tickets</a>
             <a href="javascript:void(0);" class="icon" onclick="ResponsiveNavBar()">
                 <i class="fa fa-bars"></i>
             </a>
         </nav>
+
+        <!-- Calendar: populated by script.js on page load; clicking a date reveals the form -->
         <main class="main calendar">
             <table class="schedule-calendar" id="scheduleTable"></table>
-            
         </main>
-        <div class ="main-img">
+
+        <!-- Admission pricing reference -->
+        <div class="main-img">
             <aside class="aside-prices">
-            <table class="price-table">
-                <thead>
-                    <tr>
-                        <th colspan="2">Admission Pricing</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr><td>Adults</td><td>$18</td></tr>
-                    <tr><td>Seniors</td><td>$14</td></tr>
-                    <tr><td>Teens (12-18)</td><td>$12</td></tr>
-                    <tr><td>Children (Under 12)</td><td>Free</td></tr>
-                </tbody>
-            </table>
-        </aside>
+                <table class="price-table">
+                    <thead>
+                        <tr>
+                            <th colspan="2">Admission Pricing</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Adults</td><td>$18</td></tr>
+                        <tr><td>Student</td><td>$14</td></tr>
+                        <tr><td>Children (Under 12)</td><td>Free</td></tr>
+                        <tr><td>Yearly Membership</td><td>$35</td></tr>
+                    </tbody>
+                </table>
+            </aside>
         </div>
 
-
-    <div class="secondRow">
-        
-
-        <div id="ticket-purchase-area" style="display: none; width: 100%; max-width: 400px;">
-    <h3 class="checkout-header">Complete Your Purchase</h3>
-    <form id="main-ticket-form" onsubmit="event.preventDefault(); submitPurchase();">
-        <div class="form-group">
-            <label for="cust-name">Full Name:</label>
-            <input type="text" id="cust-name" required placeholder="John Doe" style="width: 180px;">
+        <!-- Ticket purchase form: hidden until a calendar date is selected -->
+        <div class="secondRow">
+            <div id="ticket-purchase-area" style="display: none; width: 100%; max-width: 400px;">
+                <h3 class="checkout-header">Complete Your Purchase</h3>
+                <form id="main-ticket-form" onsubmit="event.preventDefault(); submitPurchase();">
+                    <div class="form-group">
+                        <label for="cust-name">Full Name:</label>
+                        <input type="text" id="cust-name" required placeholder="John Doe" style="width: 180px;">
+                    </div>
+                    <div class="form-group">
+                        <label for="cust-email">Email Address:</label>
+                        <input type="email" id="cust-email" required placeholder="john@example.com" style="width: 180px;">
+                    </div>
+                    <!-- Read-only; pre-filled by selectDate() when a calendar cell is clicked -->
+                    <div class="form-group">
+                        <label>Selected Visit Date:</label>
+                        <input type="date" id="visitDate" required readonly>
+                    </div>
+                    <div class="form-group">
+                        <label>Adults ($18):</label>
+                        <input type="number" id="qty-adult" class="calc-input" min="0" value="0">
+                    </div>
+                    <div class="form-group">
+                        <label>Student ($14):</label>
+                        <input type="number" id="qty-senior" class="calc-input" min="0" value="0">
+                    </div>
+                    <div class="form-group">
+                        <label>Yearly Membership ($35):</label>
+                        <input type="number" id="qty-teen" class="calc-input" min="0" value="0">
+                    </div>
+                    <div class="total-display">
+                        Total Price: <span id="total-price">$0</span>
+                    </div>
+                    <!-- Optional mailing list opt-in -->
+                    <div class="form-group mailing-list-opt-in">
+                        <label style="display: flex; align-items: center; gap: 8px; font-weight: normal; cursor: pointer;">
+                            <input type="checkbox" id="mailing-list" name="mailing-list">
+                            Join our mailing list for news and special offers
+                        </label>
+                    </div>
+                    <button type="submit" class="checkoutButton">Confirm & Pay</button>
+                </form>
+            </div>
         </div>
-
-        <div class="form-group">
-            <label for="cust-email">Email Address:</label>
-            <input type="email" id="cust-email" required placeholder="john@example.com" style="width: 180px;">
-        </div>
-
-        <div class="form-group">
-            <label>Selected Visit Date:</label>
-            <input type="date" id="visitDate" required readonly>
-        </div>
-        
-        <div class="form-group">
-            <label>Adults ($18):</label>
-            <input type="number" id="qty-adult" class="calc-input" min="0" value="0">
-        </div>
-
-        <div class="form-group">
-            <label>Seniors ($14):</label>
-            <input type="number" id="qty-senior" class="calc-input" min="0" value="0">
-        </div>
-
-        <div class="form-group">
-            <label>Teens ($12):</label>
-            <input type="number" id="qty-teen" class="calc-input" min="0" value="0">
-        </div>
-
-        <div class="total-display">
-            Total Price: <span id="total-price">$0</span>
-        </div>
-
-        <button type="submit" class="checkoutButton">Confirm & Pay</button>
-        </form>
     </div>
-    </div>
-</div>
+
     <footer class="footer">
         <p>© The Burger Musuem. All rights reserved.</p>
         <p id="copyYear"></p>
     </footer>
+</body>
+</html>
